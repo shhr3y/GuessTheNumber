@@ -9,6 +9,11 @@ window.onload = function() {
 
 function playGame(){
   let numberGuess = document.getElementById("number-guess").value;
+  if(numberGuess=="" || numberGuess > 100 || numberGuess < 0){
+    alert("Please Enter an valid Number!");
+    document.getElementById("number-guess").value = null;
+    return;
+  }
   getResult(numberGuess);
   saveGuessHistory(numberGuess);
   displayHistory();
